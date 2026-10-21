@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Destinos | Avynera</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar"><div class="contenedor">
+<a class="logo" href="index.html">✈ AVYNERA</a>
+<nav><ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="destinos.html" class="activo">Explorar</a></li>
+<li><a href="favoritos.html">Favoritos</a></li>
+<li><a class="btn-login" href="login.html">Iniciar sesión</a></li>
+</ul></nav></div></header>
+<main class="contenedor">
+<div class="titulo-pagina"><h1>Explorar destinos</h1><p class="datos">Encuentra el lugar perfecto para tu próxima aventura</p></div>
+<div class="barra">
+<form class="buscador" onsubmit="return false"><span>🔍</span><input type="search" placeholder="¿A dónde quieres viajar?" aria-label="Buscar"></form>
+<select aria-label="Tipo"><option>Todos los destinos</option><option>Ciudad</option><option>Montaña</option><option>Playa</option></select>
+</div>
+<div class="explorar">
+<aside class="filtros">
+<h3>Filtros</h3><h3>Tipo de destino</h3>
+<label><input type="checkbox"> Playa</label><label><input type="checkbox"> Ciudad</label><label><input type="checkbox"> Montaña</label><label><input type="checkbox"> Cultura</label>
+<h3>Precio</h3>
+<label><input type="radio" name="p" checked> Todos</label><label><input type="radio" name="p"> $</label><label><input type="radio" name="p"> 81</label><label><input type="radio" name="p"> 81$</label>
+<h3>Ordenar por</h3>
+<label><input type="radio" name="o" checked> Más populares</label><label><input type="radio" name="o"> Mejor calificación</label><label><input type="radio" name="o"> Más recientes</label>
+</aside>
+<div class="grid3">
+<article class="tarjeta"><div class="img img-1">🏙️<span class="fav">♡</span></div><div class="cuerpo"><h3>Bogotá</h3><span class="datos">Colombia</span><span class="estrellas"><b>★</b> 4.7 (1.2k)</span><a class="btn" href="detalle.html">Ver destino</a></div></article><article class="tarjeta"><div class="img img-4">🗽<span class="fav">♡</span></div><div class="cuerpo"><h3>Nueva York</h3><span class="datos">Estados Unidos</span><span class="estrellas"><b>★</b> 4.8 (2.4k)</span><a class="btn" href="detalle.html">Ver destino</a></div></article><article class="tarjeta"><div class="img img-3">🏖️<span class="fav">♡</span></div><div class="cuerpo"><h3>Río de Janeiro</h3><span class="datos">Brasil</span><span class="estrellas"><b>★</b> 4.9 (2k)</span><a class="btn" href="detalle.html">Ver destino</a></div></article>
+<article class="tarjeta"><div class="img img-2">🏝️<span class="fav">♡</span></div><div class="cuerpo"><h3>San Andrés</h3><span class="datos">Colombia</span><span class="estrellas"><b>★</b> 4.6 (890)</span><a class="btn" href="detalle.html">Ver destino</a></div></article><article class="tarjeta"><div class="img img-1">🗼<span class="fav">♡</span></div><div class="cuerpo"><h3>París</h3><span class="datos">Francia</span><span class="estrellas"><b>★</b> 4.8 (2.3k)</span><a class="btn" href="detalle.html">Ver destino</a></div></article><article class="tarjeta"><div class="img img-4">🏯<span class="fav">♡</span></div><div class="cuerpo"><h3>Tokio</h3><span class="datos">Japón</span><span class="estrellas"><b>★</b> 4.7 (2k)</span><a class="btn" href="detalle.html">Ver destino</a></div></article>
+</div></div></main>
+<footer class="footer"><div class="contenedor"><div class="cols"><div><h3>AVYNERA</h3><p>Descubre nuevos lugares, culturas y experiencias.</p></div>
+<ul><li><a href="index.html">Inicio</a></li><li><a href="destinos.html">Explorar destinos</a></li><li><a href="favoritos.html">Favoritos</a></li><li><a href="#">Contacto</a></li></ul></div>
+<p class="copy">© 2026 Avynera. Todos los derechos reservados.</p></div></footer>
+</body></html>

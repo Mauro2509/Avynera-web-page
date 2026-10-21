@@ -1,0 +1,609 @@
+/* ==========================================================
+   AVYNERA - Hoja de estilos
+   ----------------------------------------------------------
+   ÍNDICE
+   1. Variables (colores y medidas)
+   2. Reset y estilos base
+   3. Utilidades y estructura general
+   4. Botones
+   5. Navbar
+   6. Footer
+   7. Buscador y formularios
+   8. Tarjetas de destinos
+   9. Página: Inicio
+   10. Página: Explorar destinos
+   11. Página: Detalle de destino
+   12. Página: Perfil
+   13. Página: Login
+   14. Responsive
+   ========================================================== */
+
+
+/* ========== 1. VARIABLES ========== */
+:root {
+  /* Colores */
+  --azul: #2563EB;
+  --celeste: #38BDF8;
+  --blanco: #FFFFFF;
+  --gris-claro: #F3F4F6;
+  --texto: #1F2937;
+  --texto-2: #6B7280;
+  --borde: #E5E7EB;
+
+  /* Medidas */
+  --radio: 12px;
+  --sombra: 0 4px 16px rgba(31, 41, 55, .08);
+}
+
+
+/* ========== 2. RESET Y BASE ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: var(--texto);
+  background: var(--blanco);
+  line-height: 1.6;
+}
+
+a { color: var(--azul); text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+h1, h2 { font-weight: 700; line-height: 1.2; }
+h3 { font-weight: 600; }
+
+:focus-visible {
+  outline: 3px solid var(--celeste);
+  outline-offset: 2px;
+}
+
+
+/* ========== 3. UTILIDADES Y ESTRUCTURA ========== */
+.contenedor {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.seccion { padding: 64px 0; }
+.seccion.gris { background: var(--gris-claro); }
+.seccion h2 { font-size: 2rem; margin-bottom: 8px; }
+
+.sub { color: var(--texto-2); margin-bottom: 32px; }
+.datos { color: var(--texto-2); font-size: .85rem; }
+.centro { text-align: center; }
+
+/* Tarjeta blanca genérica (paneles) */
+.panel {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 24px;
+  height: fit-content;
+}
+
+/* Cuadrículas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+/* Fondos degradados (reemplazar por fotos reales) */
+.img-1 { background: linear-gradient(135deg, #2563EB, #38BDF8); }
+.img-2 { background: linear-gradient(135deg, #0EA5E9, #6366F1); }
+.img-3 { background: linear-gradient(135deg, #38BDF8, #10B981); }
+.img-4 { background: linear-gradient(135deg, #1F2937, #2563EB); }
+
+
+/* ========== 4. BOTONES ========== */
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 2px solid var(--azul);
+  cursor: pointer;
+}
+
+.btn-primario { background: var(--azul); color: var(--blanco); }
+.btn-primario:hover { background: #1D4ED8; }
+
+.btn-secundario { background: var(--blanco); color: var(--azul); }
+.btn-secundario:hover { background: var(--gris-claro); }
+
+
+/* ========== 5. NAVBAR ========== */
+.navbar {
+  background: var(--blanco);
+  box-shadow: 0 1px 8px rgba(31, 41, 55, .08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 64px;
+}
+
+.logo {
+  color: var(--azul);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.navbar li a { color: var(--texto); font-weight: 500; }
+
+.navbar li a.activo {
+  color: var(--azul);
+  border-bottom: 2px solid var(--azul);
+}
+
+.navbar .btn-login {
+  color: var(--azul);
+  background: var(--blanco);
+  border: 1.5px solid var(--azul);
+  border-radius: 20px;
+  padding: 6px 20px;
+}
+
+
+/* ========== 6. FOOTER ========== */
+.footer {
+  background: #1F2937;
+  color: var(--blanco);
+  padding: 48px 0 24px;
+}
+
+.footer .cols {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.footer p { color: #D1D5DB; }
+.footer ul { list-style: none; }
+.footer li a { color: var(--blanco); }
+
+.copy {
+  border-top: 1px solid #374151;
+  padding-top: 16px;
+  font-size: .85rem;
+  color: #9CA3AF;
+}
+
+
+/* ========== 7. BUSCADOR Y FORMULARIOS ========== */
+/* Buscador */
+.buscador {
+  display: flex;
+  gap: 8px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 8px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+.buscador:focus-within {
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .3);
+}
+
+.buscador input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--texto);
+}
+
+.buscador input::placeholder { color: var(--texto-2); }
+
+/* Formulario (reservar) */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 500;
+  font-size: .9rem;
+}
+
+.formulario input,
+.formulario select {
+  padding: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+  outline: 0;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .2);
+}
+
+.formulario .btn { width: 100%; }
+
+
+/* ========== 8. TARJETAS DE DESTINOS ========== */
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.tarjeta .img {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 180px;
+  padding: 12px;
+  font-size: 3rem;
+  color: var(--blanco);
+}
+
+.tarjeta .cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  padding: 16px;
+}
+
+.tarjeta p { flex: 1; font-size: .9rem; color: var(--texto-2); }
+.tarjeta .btn { text-align: center; }
+
+/* Botón corazón de favoritos */
+.fav {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  color: #EF4444;
+  background: var(--blanco);
+  border-radius: 50%;
+}
+
+/* Calificación */
+.estrellas { font-size: .85rem; color: var(--texto-2); }
+.estrellas b { color: #F59E0B; }
+
+
+/* ========== 9. PÁGINA: INICIO ========== */
+.hero {
+  padding: 96px 0;
+  text-align: center;
+  color: var(--blanco);
+  background: linear-gradient(135deg, var(--azul), var(--celeste));
+}
+
+.hero h1 { font-size: 2.75rem; margin-bottom: 16px; }
+
+.hero p {
+  max-width: 560px;
+  margin: 0 auto 32px;
+  font-size: 1.125rem;
+}
+
+
+/* ========== 10. PÁGINA: EXPLORAR DESTINOS ========== */
+.titulo-pagina { padding: 32px 0 16px; }
+.titulo-pagina h1 { font-size: 1.75rem; }
+
+/* Barra de búsqueda + selector */
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.barra .buscador { flex: 1; min-width: 240px; margin: 0; }
+
+.barra select {
+  padding: 10px 16px;
+  font-family: inherit;
+  color: var(--texto);
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+/* Filtros laterales + resultados */
+.explorar {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding-bottom: 64px;
+}
+
+.filtros h3 { font-size: .95rem; margin: 16px 0 8px; }
+
+.filtros label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: .9rem;
+  color: var(--texto-2);
+}
+
+.filtros input { accent-color: var(--azul); }
+
+/* Tarjetas compactas de esta página */
+.grid3 .tarjeta .img { height: 150px; font-size: 2.5rem; }
+.grid3 .cuerpo { gap: 2px; }
+
+.grid3 .btn {
+  margin-top: 8px;
+  padding: 8px;
+  font-size: .9rem;
+  color: var(--blanco);
+  background: var(--azul);
+}
+
+
+/* ========== 11. PÁGINA: DETALLE DE DESTINO ========== */
+.hero-det {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin: 24px 0;
+  font-size: 5rem;
+  color: var(--blanco);
+  border-radius: var(--radio);
+}
+
+.hero-det .fav { width: 40px; height: 40px; }
+
+/* Columna de información + panel de precio */
+.det2 {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 32px;
+}
+
+.precio { font-size: 1.6rem; font-weight: 700; }
+
+/* Etiquetas (Cultura, Playa, Historia) */
+.chips { display: flex; gap: 8px; margin: 12px 0; }
+
+.chip {
+  padding: 4px 14px;
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--azul);
+  background: #EFF6FF;
+  border-radius: 16px;
+}
+
+/* Temperatura, mejor época, duración */
+.datos3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.datos3 div {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  font-size: .85rem;
+  color: var(--texto-2);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+.datos3 b { color: var(--texto); }
+
+/* Galería de fotos */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.galeria div {
+  display: grid;
+  place-items: center;
+  height: 110px;
+  font-size: 2rem;
+  color: var(--blanco);
+  border-radius: var(--radio);
+}
+
+
+/* ========== 12. PÁGINA: PERFIL ========== */
+.perfil {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 32px;
+  padding: 40px 0;
+}
+
+/* Menú lateral */
+.menu-lateral {
+  padding: 16px;
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.menu-lateral a {
+  display: block;
+  padding: 10px 12px;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--texto);
+  border-radius: 8px;
+}
+
+.menu-lateral a.activo { color: var(--azul); background: #EFF6FF; }
+
+/* Usuario y avatar */
+.usuario { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  font-size: 1.5rem;
+  color: var(--blanco);
+  background: var(--celeste);
+  border-radius: 50%;
+}
+
+/* Reservas recientes */
+.reserva {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--borde);
+}
+
+.reserva .mini { width: 48px; height: 40px; border-radius: 8px; }
+.reserva div:nth-child(2) { flex: 1; font-size: .9rem; }
+
+.estado {
+  padding: 2px 12px;
+  font-size: .75rem;
+  color: #16A34A;
+  background: #DCFCE7;
+  border-radius: 12px;
+}
+
+
+/* ========== 13. PÁGINA: LOGIN ========== */
+.login-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* Lado izquierdo (mensaje) */
+.login-izq {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 48px;
+  background: linear-gradient(160deg, #EFF6FF, #38BDF8);
+}
+
+.login-izq h1 { font-size: 2rem; color: var(--texto); }
+
+/* Lado derecho (formulario) */
+.login-der {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  padding: 48px;
+}
+
+.login-der label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: .85rem;
+  font-weight: 500;
+}
+
+.login-der input[type=email],
+.login-der input[type=password] {
+  padding: 12px;
+  font-family: inherit;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+.login-der input:focus {
+  outline: 0;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .2);
+}
+
+.fila { display: flex; justify-content: space-between; font-size: .85rem; }
+.sociales { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+
+/* ========== 14. RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .seccion { padding: 40px 0; }
+  .hero h1 { font-size: 2rem; }
+  .navbar ul { gap: 12px; font-size: .9rem; }
+
+  /* Las columnas pasan a una sola */
+  .explorar,
+  .det2,
+  .perfil,
+  .login-split { grid-template-columns: 1fr; }
+
+  .login-izq { min-height: 220px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
